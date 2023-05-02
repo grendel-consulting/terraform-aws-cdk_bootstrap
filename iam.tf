@@ -25,7 +25,7 @@ data "aws_iam_policy_document" "file_publishing_policy" {
     sid       = "AllowUseOfKey"
     actions   = ["kms:Decrypt", "kms:DescribeKey", "kms:Encrypt", "kms:ReEncrypt*", "kms:GenerateDataKey*"]
     effect    = "Allow"
-    resources = local.create_new_key == true ? aws_kms_key.staging_key[0].arn : "arn:aws:kms:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:key/${var.file_assets_bucket_kms_key_id}"
+    resources = [local.create_new_key == true ? aws_kms_key.staging_key[0].arn : "arn:aws:kms:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:key/${var.file_assets_bucket_kms_key_id}"]
   }
 }
 

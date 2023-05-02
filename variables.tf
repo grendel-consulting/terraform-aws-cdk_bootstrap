@@ -66,8 +66,3 @@ variable "use_example_permissions_boundary" {
 #   description = "Describe the provenance of the resources in this bootstrap stack. Change this when you customize the template. To prevent accidents, the CDK CLI will not overwrite bootstrap stacks with a different variant."
 #   default     = "Grendel Consulting"
 # }
-
-variable "region" {
-  type        = string
-  description = "Region into which to deploy the bootstrap stack"
-}

@@ -12,7 +12,7 @@ resource "aws_iam_policy" "file_publishing_policy" {
   policy = data.aws_iam_policy_document.file_publishing_policy.json
 }
 
-# tfsec:ignore:aws-iam-no-policy-wildcards
+# trivy:ignore:AVD-AWS-0057 - IAM Policy Document Uses Wildcarded Action
 data "aws_iam_policy_document" "file_publishing_policy" {
   statement {
     sid       = "AllowFilePublishing"
@@ -48,7 +48,7 @@ resource "aws_iam_policy" "image_publishing_policy" {
   policy = data.aws_iam_policy_document.image_publishing_policy.json
 }
 
-# tfsec:ignore:aws-iam-no-policy-wildcards
+# trivy:ignore:AVD-AWS-0057 - IAM Policy Document Uses Wildcarded Action
 data "aws_iam_policy_document" "image_publishing_policy" {
   statement {
     sid       = "AllowImagePublishing"
@@ -158,7 +158,8 @@ resource "aws_iam_policy" "deployment_action_policy" {
   policy = data.aws_iam_policy_document.deployment_action_policy.json
 }
 
-# tfsec:ignore:aws-iam-no-policy-wildcards
+# trivy:ignore:AVD-AWS-0057 - IAM Policy Document Uses Wildcarded Action
+# trivy:ignore:AVD-AWS-0342 - IAM Policy Allows iam:PassRole Action
 data "aws_iam_policy_document" "deployment_action_policy" {
   statement {
     sid       = "CloudFormationPermissions"
@@ -258,7 +259,7 @@ resource "aws_iam_policy" "cdk_permissions_boundary" {
   path        = "/"
 }
 
-# tfsec:ignore:aws-iam-no-policy-wildcards
+# trivy:ignore:AVD-AWS-0057 - IAM Policy Document Uses Wildcarded Action
 data "aws_iam_policy_document" "cdk_permissions_boundary" {
   count = local.should_create_permissions_boundary == true ? 1 : 0
 

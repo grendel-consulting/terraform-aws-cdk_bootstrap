@@ -1,4 +1,4 @@
-# tfsec:ignore:aws-ecr-repository-customer-key
+# trivy:ignore:AVD-AWS-0033 - Repository is not encrypted using KMS
 resource "aws_ecr_repository" "assets" {
   name                 = local.has_custom_container_assets_repository_name == true ? var.container_assets_repository_name : "cdk-${var.qualifier}-container-assets-${data.aws_caller_identity.current.account_id}-${data.aws_region.current.name}"
   image_tag_mutability = "IMMUTABLE"

@@ -1,4 +1,4 @@
-# tfsec:ignore:aws-kms-auto-rotate-keys
+# trivy:ignore:AVD-AWS-0065 - Key Does Not Have Rotation Enabled
 resource "aws_kms_key" "staging_key" {
   count = local.create_new_key ? 1 : 0
 

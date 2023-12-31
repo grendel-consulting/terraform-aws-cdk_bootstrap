@@ -5,7 +5,9 @@ repos:
       - id: terraform_fmt
       - id: terraform_validate
       - id: terraform_tflint
-      - id: terraform_tfsec
+      - id: terraform_trivy
+        args:
+        -  --args=--skip-files="./cloudformation/bootstrap.yaml"
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.9.0
     hooks:

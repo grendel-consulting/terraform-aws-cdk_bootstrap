@@ -1,9 +1,9 @@
-# tfsec:ignore:aws-s3-block-public-policy
-# tfsec:ignore:aws-s3-block-public-acls
-# tfsec:ignore:aws-s3-ignore-public-acls
-# tfsec:ignore:aws-s3-no-public-buckets
-# tfsec:ignore:aws-s3-enable-bucket-logging
-# tfsec:ignore:aws-s3-specify-public-access-block
+# trivy:ignore:AVD-AWS-0086 - No Public Access Block So Not Blocking Public Access ACLs
+# trivy:ignore:AVD-AWS-0087 - No Public Access Block So Not Blocking Public Policies
+# trivy:ignore:AVD-AWS-0089 - Bucket Has Logging Disabled
+# trivy:ignore:AVD-AWS-0091 - No Public Access Block So Not Ignoring Public ACLs
+# trivy:ignore:AVD-AWS-0093 - No Public Access Block So Not Restricing Public Buckets
+# trivy:ignore:AVD-AWS-0094 - Bucket Does Not Have A Corresponding Public Access Block
 resource "aws_s3_bucket" "staging" {
   bucket = local.has_custom_file_assets_bucket_name == true ? var.file_assets_bucket_name : "cdk-${var.qualifier}-assets-${data.aws_caller_identity.current.account_id}-${data.aws_region.current.name}"
 

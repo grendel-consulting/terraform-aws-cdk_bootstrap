@@ -13,6 +13,6 @@ rule "terraform_module_pinned_source" {
 
 plugin "aws" {
     enabled = true
-    version = "0.28.0"
+    version = "0.29.0"
     source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }

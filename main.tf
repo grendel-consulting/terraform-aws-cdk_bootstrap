@@ -8,7 +8,7 @@
 resource "aws_cloudformation_stack" "bootstrap" {
   name = "CDKToolkit"
   template_body = jsonencode({
-    Condition = {
+    Conditions = {
       Never = {
         "Fn::Equals" = [
           "Never",

@@ -92,7 +92,7 @@ jobs:
           show-progress: false
 
       - name: Run with SARIF Output
-        uses: aquasecurity/trivy-action@d710430a6722f083d3b36b8339ff66b32f22ee55 # v0.19.0
+        uses: aquasecurity/trivy-action@d710430a6722f083d3b36b8339ff66b32f22ee55 # 0.19.0
         with:
           scan-type: "fs"
           format: "sarif"

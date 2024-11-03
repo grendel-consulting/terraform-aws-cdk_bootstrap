@@ -1,4 +1,5 @@
 # CDK Bootstrap
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/grendel-consulting/terraform-aws-cdk_bootstrap/badge)](https://scorecard.dev/viewer/?uri=github.com/grendel-consulting/terraform-aws-cdk_bootstrap)
 
 Re-implementation of the CDK bootstrapping CloudFormation into a Terraform module, for easy use with AWS Account Factory for Terraform.
 
